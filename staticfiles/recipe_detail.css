@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  /* border: 1px solid red; */
+}
+.container {
+  width: 1110px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.my_recipes p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .my_recipes small {
+    display: block;
+    color: #999;
+    font-size: 12px;
+    font-family: 'Arial', sans-serif;
+  }
+.my_recipes ul li small{
+    padding-left: 10px;
+  }  
+
+  .my_recipes li {
+    padding: 15px 0;
+    padding-right: 190px;
+  }
+  .my_recipes li p{
+    padding-left: 10px;
+  }
+  .my_recipes h3 {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+  }

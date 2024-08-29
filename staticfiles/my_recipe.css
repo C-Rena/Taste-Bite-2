@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+
+}
+.container {
+  width: 1110px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+.add_recipe_btn{
+  width: 130px;
+  height: 50px;
+  cursor: pointer;
+  background-color: #FF642F;
+  color: white;
+  border: hidden;
+  font-family: Inter;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.add_recipe_btn:hover{
+  background-color: white;
+  color: #FF642F;
+  border: 1px solid #FF642F;
+  transition: 0.6s;
+ 
+}
+
+
+
+.alert_warning, .alert_success {
+  font-size: 20px;
+  width: 1110px;
+  margin: 0 auto;
+  text-align: center;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.alert_warning {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert_success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.my_recipes ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.my_recipes li {
+  padding: 15px 0;
+  padding-right: 190px;
+}
+.my_recipes li p{
+  padding-left: 10px;
+}
+.my_recipes h3 {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+}
+.my_recipes ul li small{
+  padding-left: 10px;
+}
+.my_recipes h3 a {
+  text-decoration: none;
+  color: #FF642F;
+}
+
+.my_recipes h3 a:hover {
+  color:#f28e6d;
+}
+
+.my_recipes p {
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.my_recipes small {
+  display: block;
+  color: #999;
+  font-size: 12px;
+  font-family: 'Arial', sans-serif;
+}
+
+
+.my_recipes hr {
+  border: 0;
+  border-top: 1px solid #FF642F;
+  margin: 20px 0;
+}
+.my_recipes{
+  padding-right: 100px;
+}
+
+.foto_text{
+  display: flex;
+  gap: 5px;
+  margin: 30px 0;
+
+}
+.foto_text_img{
+  width: calc((100% - (5px * (2 - 1))) / 2);
+}
+.foto_text_text{
+  background-color: #FF642F;
+  width: calc((100% - (5px * (2 - 1))) / 2);
+  border-radius: 8px;
+}
+.foto_text_img img{
+  width: 100%;
+}
+.foto_text_text p{
+  color: var(--Fill-Black, #ffffff);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+}
+.foto_text_text h2{
+  color: var(--Fill-Black, #ffffff);
+font-feature-settings: 'liga' off, 'clig' off;
+
+/* 30PX - H6 */
+font-family: "Playfair Display";
+font-size: 55px;
+font-style: normal;
+font-weight: 700;
+line-height: 37px; /* 123.333% */
+}
+.foto_text_text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+#p_text{
+  color: #721c24;
+  font-family: Inter;
+  font-size: 20px;
+}

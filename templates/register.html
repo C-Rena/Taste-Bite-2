@@ -1,0 +1,65 @@
+
+{% load static %}
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{% static 'register.css' %}">
+    {% comment %} <link rel="stylesheet" href="sign.up(responsive).css"> {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Sign_up</title>
+</head>
+<body>
+    <div class="sign_up_total_div">
+        <div class="sign_up">
+            <p class="sign_up_texts">SIGN UP</p>
+            <div class="sign_up_inputs">
+                
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="name_input">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" name="username" placeholder="Full Name">
+
+                    </div>
+
+                    <div class="email_input">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+
+                    <div class="password_input">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <p>Do you have account?<a href="{%  url 'account:login' %}">Login</a></p>
+                    
+                    <button>Sign up</button> 
+                    <div class="sign_lover_texts">
+                        <p>By creating an account, you agree to our</p>
+                        <span>Terms & Conditions</span>
+            
+                       </div>
+                </form>
+            </div>
+
+          
+
+        </div>
+
+        <div class="sign_up_second_div">
+            <div class="sign_up_second_div_text">
+                <h2>WELCOME TASTEBITE</h2>
+                <p>Log in to Tastebite and discover a world of unique recipes and kitchen tips. Treat yourself and your loved ones with recipes full of flavor. Sign up now and start discovering new flavors every day!</p>
+            </div>
+
+        </div>
+
+    </div>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+    <link rel="stylesheet" href="{% static 'my_recipe.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == "warning" %}
+                    <div class="alert_warning">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert_success">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <div class="total_recipes_div">
+            <h2>YOUR RECIPES</h2>
+            
+            <div class="foto_text">
+                <div class="foto_text_img">
+                    <img src="{% static './images/img4.png' %}" alt="">
+                </div>
+                <div class="foto_text_text">
+                    <h2>TasteBite</h2>
+                    <p>Have a delicious recipe you want to share with the world? Join our TasteBite community and upload your favorite dishes today! It’s easy—just sign in, fill in the recipe details, and submit. Your culinary creation could inspire others and become a new favorite on our site. Start sharing your recipes now and be part of our growing food-loving community!</p>
+                </div>
+            </div>
+
+            {% if recipes %}
+                <div class="my_recipes">
+                    <ul>
+                        {% for recipe in recipes %}
+                        <li>
+                            {% comment %} <h3>{{ recipe.recipe_owner.username }}</h3> {% endcomment %}
+                            <h3><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.recipe_name }}</a></h3>
+                            <p>{{ recipe.recipe|truncatechars:100}}</p>
+                            <small>{{ recipe.time }}</small>
+                            <br>
+                            <a href="{% url 'update' recipe.id %}"><i class="fa-solid fa-gear"></i></a>
+                            <a href="{% url 'delete' recipe.id %}"><i class="fa-solid fa-trash"></i></a>
+                        </li>
+                        <br>
+                        <hr>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% else %}
+                <p id="p_text">You haven't added any recipes yet...</p>
+            {% endif %}
+
+            <a href="{% url 'add_recipe' %}"> 
+                <button class="add_recipe_btn">Add Recipe</button>
+            </a>
+        </div>
+    </div>
+
+{% endblock body %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'add_recipe.css' %}">
+
+    <div class="container">
+        <div class="total_divv">
+            <h2 id="add_text">Add your recipe</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- {{form.media}} -->
+                <div class="recipe_name">
+                    <input type="text" name="recipe_name" placeholder="Tarif adı...">
+                </div>
+
+                <div class="recipe_area">
+                    <textarea name="recipe" placeholder="Enter you recipe here..."></textarea>
+                </div>
+
+                <div class="image_upload">
+                    <input type="file" name="image" accept="image/*">
+                </div>
+
+                <button class="add_recipe_buton">Add</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock body %}

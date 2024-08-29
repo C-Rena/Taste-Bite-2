@@ -1,0 +1,360 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    
+
+
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == "warning" %}
+                <div class="alert_warning">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="alert_success">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <section class="home-page-section-1 container">
+        <div class="img-area"><img src="static/images/homepage/home_img.png" alt=""></div>
+        <div class="text-area">
+            <div class="text">
+                <span> <img src="static/images/feather-icon/trending-up.png" alt=""> 85% would make this again</span>
+                <h6>Mighty Super Cheesecake</h6>
+                <p>Look no further for a creamy and ultra smooth classic cheesecake recipe! no one can deny its simple
+                    decadence.</p>
+                <div class="icon"><img src="static/images/Icon.png"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="home-page-section-2 container">
+        <div class="section-2-row1">
+            <h5>Super Delicious</h5>
+            <div class="cards">
+                <div class="card">
+                    <div class="photo"><img src="static/images/card-image/Image5.png" alt=""></div>
+                    <div class="card-content">
+                        <div class="star">
+                            <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                            <img src="static/images/star.png" alt="">
+                        </div>
+                        <span>Spinach and Cheese Pasta</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="photo"> <img src="static/images/card-image/Image1.png" alt=""></div>
+                    <div class="card-content">
+                        <div class="star">
+                            <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                            <img src="static/images/star.png" alt="">
+                        </div>
+                        <span>Fancy Glazed Donuts</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="photo"><img src="static/images/card-image/Image2.png" alt=""></div>
+                    <div class="card-content">
+                        <div class="star">
+                                <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                            <img src="static/images/star.png" alt="">
+                        </div>
+                        <span>Mighty Cheesy Breakfast Burger</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section-2-row2">
+            <h5>Sweet Tooth</h5>
+            <div class="cards">
+                <div class="card">
+                    <div class="photo"><img src="static/images/card-image/Image3.png" alt=""> </div>
+                    <div class="card-content">
+                        <div class="star">
+                              <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                            <img src="static/images/star.png" alt="">
+                        </div>
+                        <span>Caramel Strawberry Milkshake</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="photo"> <img src="static/images/card-image/Image4.png" alt=""></div>
+                    <div class="card-content">
+                        <div class="star">
+                               <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                            <img src="static/images/star.png" alt="">
+                        </div>
+                        <span>Chocolate and Banana Jar Cake</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="photo"><img src="static/images/card-image/Image5.png" alt=""></div>
+                    <div class="card-content">
+                        <div class="star">
+                            <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                             <img src="static/images/star.png" alt="">
+                            <img src="static/images/star.png" alt="">
+                        </div>
+                        <span>Berry Maddness Biscuts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <section class="home-page-section-3 container">
+        <h5>Popular Categories</h5>
+        <div class="cards">
+            <div class="card">
+                <div class="photo"><img src="static/images/card-image/c-image1.png" alt=""></div>
+                <span>Pasta</span>
+            </div>
+
+            <div class="card">
+                <div class="photo"><img src="static/images/card-image/c-image2.png" alt=""></div>
+                <span>Pizza</span>
+            </div>
+
+            <div class="card">
+                <div class="photo"><img src="static/images/card-image/c-image3.png" alt=""></div>
+                <span>Vegan</span>
+            </div>
+
+            <div class="card">
+                <div class="photo"><img src="static/images/card-image/c-image4.png" alt=""></div>
+                <span>Desserts</span>
+            </div>
+
+            <div class="card">
+                <div class="photo"><img src="static/images/card-image/c-image5.png" alt=""></div>
+                <span>Smoothies</span>
+            </div>
+
+            <div class="card">
+                <div class="photo"><img src="static/images/card-image/c-image6.png" alt=""></div>
+                <span>Breakfast</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="full-width-section ">
+        <div class="text">
+            <h1>Deliciousness to your inbox</h1>
+            <p>Enjoy weekly hand picked recipes and recommendations</p>
+            <div class="subscribe">
+                <input id="subscribe__email" type="email" placeholder="Email Adress">
+                <a id="btn_subscribe">Join</a>
+            </div>
+            <span>By joining our newsletter you agree to our Terms and Conditions</span>
+
+        </div>
+
+
+    </section>
+
+    <section class="home-page-section-4 container">
+        <h3>Hand-Picked Collections</h3>
+        <div class="cards">
+            <div class="card">
+                <div class="photo"><img src="static/images/Collection/Image.png" alt=""></div>
+                <div class="text">
+                    <h6>Sushi Combos for your Next Party</h6>
+                    <a>156 Recipes</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo"><img src="static/images/Collection/Image1.png" alt=""></div>
+                <div class="text">
+                    <h6>Everything Bagel</h6>
+                    <a>156 Recipes</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo"><img src="static/images/Collection/Image2.png" alt=""></div>
+                <div class="text">
+                    <h6>Cook Like a Chef</h6>
+                    <a>156 Recipes</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo"> <img src="static/images/Collection/Image3.png" alt=""></div>
+                <div class="text">
+                    <h6>Exquisite Dinner Recipe Ideas</h6>
+                    <a>156 Recipes</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo"><img src="static/images/Collection/Image4.png" alt=""></div>
+                <div class="text">
+                    <h6>The Ultimate Cookie Frenzy</h6>
+                    <a>156 Recipes</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo"><img src="static/images/Collection/Image5.png" alt=""></div>
+                <div class="text">
+                    <h6>For the Love of Donuts</h6>
+                    <a>156 Recipes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-page-section-5 container">
+        <h5>Latest Recipes</h5>
+        <div class="cards">
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image.png" alt=""></div>
+                <div class="text">
+                    <span>Caramel Strawberry Milkshake</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image1.png" alt=""></div>
+                <div class="text">
+                    <span>Cashew Vegan Rice</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image2.png" alt=""></div>
+                <div class="text">
+                    <span>Smoked Salmon Salad Sandwich</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image3.png" alt=""></div>
+                <div class="text">
+                    <span>Salmon in Creamy Sun Dried Tomato Sauce</span>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image4.png" alt=""></div>
+                <div class="text">
+                    <span>Healthy Jam Waffle Breakfast</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image5.png" alt=""></div>
+                <div class="text">
+                    <span>Chocolate and Banana Jar Cake</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image6.png" alt=""></div>
+                <div class="text">
+                    <span>Caramel Blueberry Scones</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image7.png" alt=""></div>
+                <div class="text">
+                    <span>Blueberry Carrot Cake</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image8.png" alt=""></div>
+                <div class="text">
+                    <span>Vegan Cauliflower Salad</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image9.png" alt=""></div>
+                <div class="text">
+                    <span>Roasted Red Pepper Soup</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image10.png" alt=""></div>
+                <div class="text">
+                    <span>Eggs and Avocado Toaste</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image11.png" alt=""></div>
+                <div class="text">
+                    <span>Pork Shoulder Cashew Noodles</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image12.png" alt=""></div>
+                <div class="text">
+                    <span>Toasted Farfalle In Pesto Sauce</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image13.png" alt=""></div>
+                <div class="text">
+                    <span>Cheesy Bacon Burger Sliders</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image14.png" alt=""></div>
+                <div class="text">
+                    <span>Fig and Raisins Oatmeal</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"> <img src="static/images/Recipe/Image15.png" alt=""></div>
+                <div class="text">
+                    <span>Silky Smooth Panacotta</span>
+                </div>
+            </div>
+        </div>
+        <div class="section-5-btn"> <a href="" class="l-M-btn">Load More</a></div>
+
+    </section>
+
+    
+{% endblock body %}

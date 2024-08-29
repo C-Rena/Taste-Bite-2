@@ -1,0 +1,5 @@
+@media (max-width: 757px) {
+    .nav-menu ul li{
+        display: none;
+    }
+}

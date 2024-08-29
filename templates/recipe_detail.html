@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+    <link rel="stylesheet" href="{% static 'recipe_detail.css' %}">
+    
+    <div class="container">
+    
+
+        <div class="my_recipes">
+            <ul>
+        
+                <li>
+                    {% comment %} <h3>{{ recipe.recipe_owner.username }}</h3> {% endcomment %}
+                    <h3>{{ recipe.recipe_name }}</h3>
+                    <p>{{ recipe.recipe }}</p>
+                    <small>{{ recipe.time }}</small>
+                    {% if recipe.image %}
+                    <img src="{{recipe.image.url}}" alt="">
+        
+                    {% endif %}
+                </li>
+           
+            
+            </ul>
+        </div>
+       
+       
+
+    </div>
+{% endblock body %}
+

@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'login_responsive.css' %}">   bu fayl hardadi? {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Login</title>
+</head>
+<body>
+
+    <div class="login_total_div">
+        <div class="login_div1">
+            <div class="login">
+                <h2>LOGIN</h2>
+
+                <div class="login_form_div">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="login_email_div">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+
+                        <div class="login_password_div">
+                            <div class="login_password_div">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" name="password" placeholder="Password">
+                            </div>
+                        </div>
+                         <a href="">Forgot Password?</a>
+
+                             <div class="log_btn">
+                                <button type="sumbit">Login</button>
+                            </div>
+
+                    </form>
+                   
+                </div>
+                <div class="button_or_login">
+                
+
+                  
+                    <div class="or_login">
+                        <h3>Or login with</h3>
+                        <div class="or_login_buttons">
+                            <button class="facebook"><img src="{% static 'images/Shape.svg' %}" alt=""><p>Facebook</p></button>
+                            <button class="google"><img src="{% static 'images/google-icon.svg' %}" alt=""><p>Google</p></button>
+                        </div>
+
+                    </div>
+                    <div class="end_texts">
+                        <p>Don’t have an account?</p>
+                        <a href="{%  url 'account:register' %}">Sign up</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="login_div2">
+            <div class="login_div2_texts">
+                <h2>WELCOME BACK</h2>
+                <p>Log in to Tastebite and discover a world of unique recipes and kitchen tips. Treat yourself and your loved ones with recipes full of flavor. Sign up now and start discovering new flavors every day!</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+
+</body>
+</html>

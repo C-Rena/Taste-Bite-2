@@ -1,0 +1,302 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+
+
+    <link rel="stylesheet" href="{% static 'recipes.css' %}">
+    <div class="container">
+
+    <div class="header-2">
+        <div class="div_2">
+            <div class="rating">
+               <img src="{% static 'images/trending-up.png' %}" alt="">
+                <p>85% would make this again</p>
+
+            </div>
+
+            <div class="icons">
+                <i id="save" class="fa-solid fa-arrow-up-from-bracket"></i>
+                <i id="bookmark" class="fa-regular fa-bookmark"></i>
+           
+            </div>
+
+        </div>
+   
+
+        <p id="header_text">Strawberry Cream Cheesecake</p>
+
+        <div class="meta">
+            <ul>
+                <li><img src="{% static 'images/32px.png' %}" alt=""><p>Tricia Albert</p></li>
+                <li><i class="fa-regular fa-calendar"></i> <p>Yesterday</p></li>
+                <li><i class="fa-regular fa-message"></i> <p>25</p></li>
+                <li><i id="star" class="fa-solid fa-star"></i><i id="star" class="fa-solid fa-star"></i><i id="star" class="fa-solid fa-star"></i><i id="star" class="fa-solid fa-star"></i><i id="star" class="fa-solid fa-star"></i></li>
+            </ul>
+
+        </div>
+        <hr>
+        <p id="text">One thing I learned living in the Canarsie section of Brooklyn, NY was how to cook a good Italian <br>meal. Here is a recipe I created after having this dish in a restaurant. Enjoy!</p>
+      
+
+    </div>
+
+    <div class="image">
+        <img id="cake" src="{% static './images/foto.png' %}" alt="">
+        <img id="play" src="{% static './images/play.png' %}" alt="">
+    </div>
+
+    <div class="recipe_info_menu">
+        <ul>
+            <li><p class="texts">PREP:TIME</p><p class="texts2">15 MIN</p></li>
+            <li><p class="texts">PREP:TIME</p><p class="texts2">15 MIN</p></li>
+            <li><p class="texts">SERVINGS</p><p class="texts2">4 PEOPLE <i class="fa-regular fa-pen-to-square"></i></p></li>
+            <li><img src="{% static './images/Cell Print Mobile.png' %}" alt=""></li>
+        </ul>
+
+    </div>
+
+    <div class="content_div">
+        <div class="box1">
+            <div class="content_div_texts"><p>Ingredients</p></div>
+            <div class="box1_child_div">
+                <p class="box1_child_div_text">For the crust</p>
+                <ul>
+                    <li><input type="radio">
+                        <label for="">400g graham crackers</label>
+                    
+                    </li>
+                    <li><input type="radio">
+                        <label for="">150g unsalted butters, melted</label>
+                    
+                    </li>
+                </ul>
+            </div>
+
+            <div class="box1_child_div2">
+                <p class="box1_child_div_text">For the cheescake</p>
+               
+                <ul>
+                    <li><input type="radio">
+                        <label for="">300g marshmallows</label>
+                        </li>
+                        <li><input type="radio">
+                        <label for="">175g unsalted butter, melted</label>
+                        </li>
+                        <li><input type="radio">
+                            <label for="">500g Philadelphia cream cheese, softened</label>
+                        
+                        </li>
+                        <li><input type="radio">
+                        <label for="">250ml thickened/whipping cream, warm</label>
+                        </li>
+
+                        <li><input type="radio">
+                        <label for="">3 tbsp powdered gelatin + 3 tbsp water</label>
+                        </li>
+
+                        <li><input type="radio">
+                        <label for="">5 drops purple food gel</label>
+                        </li>
+                        <li><input type="radio">
+                        <label for="">3 drops blue food gel</label>
+                        </li>
+                </ul>
+            </div>
+
+            <div class="box3">
+            <div class="content_div_texts"><p>Nutrition Facts</p></div>
+            <div class="box3_child_div">
+                <ul>
+                    <li><p class="box3_left_text">Calories</p><p class="box3_right_text">219.9</p></li>
+                    <li><p class="box3_left_text">Total Fat</p><p class="box3_right_text">10.7 g</p></li>
+                    <li><p class="box3_left_text">Saturated Fat</p><p class="box3_right_text">2.2 g</p></li>
+                    <li><p class="box3_left_text">Cholesterol</p><p class="box3_right_text">37.4 mg</p></li>
+                    <li><p class="box3_left_text">Sodium</p><p class="box3_right_text">120.3 mg</p></li>
+                    <li><p class="box3_left_text">Potassium</p><p class="box3_right_text">32.8 mg</p></li>
+                    <li><p class="box3_left_text">Total Carbohydrate</p><p class="box3_right_text">22.3 g</p></li>
+                    <li><p class="box3_left_text">Sugars</p><p class="box3_right_text">8.4 g</p></li>
+                    <li><p class="box3_left_text">Protein</p><p class="box3_right_text">7.9 g</p></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+            <div class="box2">
+            <div class="box2_child_div">
+                <div class="content_div_texts"><p>Instructions</p></div>
+                <ul>
+                    <li><p class="circles">1</p><p class="text4">To prepare crust add graham crackers to a food processor and process  until you reach fine crumbs.  Add melted butter and pulse 3-4 times to coat crumbs with butter.</p></li>
+                    <li><p class="circles">2</p><p class="text4">Pour mixture into a 20cm (8”) tart tin. Use the back of a spoon to firmly  press the mixture out across  the bottom and sides of the tart tin. Chill for  30 min.</p></li>
+                    <li><p class="circles">3</p><p class="text4">Begin by adding the marshmallows and melted butter into a microwave safe bowl. Microwave for 30 seconds and mix to combine. Set aside.</p></li>
+                    <li><p class="circles">4</p><p class="text4">Next, add the gelatine and water to a small mixing bowl and mix to  combine.Microwave for 30 seconds.</p></li>
+                    <li><p class="circles">5</p><p class="text4">Add the cream cheese to the marshmallow mixture and use a hand mixer  or  stand mixer fitted with a paddle attachment to mix until smooth.</p></li>
+                    <li><p class="circles">6</p><p class="text4">Add the warm cream and melted gelatin mixture and mix until well  combined.</p></li>
+                    <li><p class="circles">7</p><p class="text4">Add 1/3 of the mixture to a mixing bowl, add purple food gel and mix until  well combined. Colour 1/3 of the mixture  blue. Split the remaining mixture into two mixing bowls,colour one pink and leave the other white.</p></li>
+                    <li><p class="circles">8</p><p class="text4">Pour half the purple cheesecake mixture into the chill tart crust. Add half the blue and then add the remaining purple and blue in the tart tin. Use a  spoon to drizzle some pink cheesecake on top. Use a skewer or the end of <br> a spoon to swirl the pink. Add some small dots of the plain cheesecake <br> mixture to create stars and then sprinkle some more starts on top before <br> chilling for 2 hours.</p></li>
+                    <li><p class="circles">9</p><p class="text4">Slice with a knife to serve.</p></li>
+                </ul>
+            </div>
+    
+        </div>
+        </div>
+
+        
+    <div class="part3">
+        <p>Already made this?</p>
+        <button class="part3_btn"><a href="">Share your feedback</a></button>
+        <hr>
+    </div>
+
+    <div class="comments">
+        <div class="comments_div">
+            <p id="title_txt">Comments</p>
+            <p id="number_text">(25)</p>
+        </div>
+
+        <div class="comment">
+            <div class="profile_name">
+                <img id="profile" src="{% static './images/image.png' %}" alt="">
+                <div class="name_time">
+                    <p>Jelanee Uwaezuoke</p>
+                    <span>45min ago</span>
+                </div>
+            </div>
+            <div class="comment_buttons">
+                <p class="coment">Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church-key roof party. </p>
+                <ul>
+                    <li><a href=""><i class="fa-regular fa-message"></i><p>Reply(2)</p></a></li>
+                    <li><a href=""><i class="fa-regular fa-heart"></i><p>48</p></a></li>
+                    <li><a href=""><i class="fa-solid fa-ellipsis"></i><p>More</p></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="load_more_btn">
+            <button id="load_btn">Load 25 more comments</button>
+        </div>
+
+        <div class="write_comment">
+            <div class="title_login">
+                <p class="write_title">Write a comment</p>
+                <div class="login_post">
+                    <span>login</span>
+                    <p>to post a comment</p>
+                </div>
+            </div>
+
+            <div class="comment_form">
+                <ul>
+                    <li>
+                    <form action="" method="POST">
+                        <textarea name="" id=""></textarea>
+                     </form>
+                    </li>
+                    <li>
+                        <button><a href="">Post comment</a></button>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+      
+    </div>
+
+    <div class="recipe_carts_div">
+        <h2>You might also like</h2>
+        <div class="carts_div">
+            <div class="recipe_cart">
+                <div class="recipe_foto_div"><img src="{% static './images/img1.png' %}" alt=""></div>
+                <p>Cranberry Macaroon Ice Cream Cake  </p>
+            </div>
+
+            <div class="recipe_cart">
+                <div class="recipe_foto_div"><img src="{% static './images/img2.png' %}" alt=""></div>
+                <p>Cranberry Macaroon Ice Cream Cake  </p>
+            </div>
+
+            <div class="recipe_cart">
+                <div class="recipe_foto_div"><img src="{% static './images/img3.png' %}" alt=""></div>
+                <p>Cranberry Macaroon Ice Cream Cake  </p>
+            </div>
+
+            <div class="recipe_cart">
+                <div class="recipe_foto_div"><img src="{% static './images/img4.png' %}" alt=""></div>
+                <p>Cranberry Macaroon Ice Cream Cake  </p>
+            </div>
+
+            <div class="recipe_cart">
+                <div class="recipe_foto_div"><img src="{% static './images/img5.png' %}" alt=""></div>
+                <p>Cranberry Macaroon Ice Cream Cake  </p>
+            </div>
+
+            <div class="recipe_cart">
+                <div class="recipe_foto_div"><img src="{% static './images/img6.png' %}" alt=""></div>
+                <p>Cranberry Macaroon Ice Cream Cake  </p>
+            </div>
+
+            <div class="recipe_cart">
+                <div class="recipe_foto_div"><img src="{% static './images/img7.png' %}" alt=""></div>
+                <p>Cranberry Macaroon Ice Cream Cake  </p>
+            </div>
+
+            <div class="recipe_cart">
+                <div class="recipe_foto_div"><img src="{% static './images/img8.png' %}" alt=""></div>
+                <p>Cranberry Macaroon Ice Cream Cake  </p>
+            </div>
+
+
+            
+            <div class="my_recipes">
+                <ul>
+                    {% for recipe in recipes %}
+                    <li>
+                        <h3>{{ recipe.recipe_owner.username }}</h3>
+                        <h3><a href="{% url 'recipe_detail' recipe.id %}">{{recipe.recipe_name}}</a></h3>
+                        <h3>{{ recipe.recipe }}</h3>
+                        <small>{{ recipe.time }}</small>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    
+    </div>
+    
+        </div>
+    
+
+<div class="inbox_content_div">
+    <div class="inbox_content_texts">
+        <h3>Deliciousness to your inbox</h3>
+        <p>Enjoy weekly hand picked recipes and recommendations</p>
+        <div class="inbox_email_div">
+            <form action="" method="POST">
+                <input type="email" placeholder="Email Address">
+            </form>
+            <button><a href="">JOIN</a></button>
+        </div>
+
+    </div>
+</div>
+
+{% endblock body %}
+
+
+

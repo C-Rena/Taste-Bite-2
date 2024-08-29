@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+.sign_up_total_div {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.sign_up{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+
+}
+.sign_up_inputs{
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+}
+.sign_up_texts{
+    margin-right: 220px;
+    color: var(--Fill-Black, #000);
+font-feature-settings: 'liga' off, 'clig' off;
+font-family: "Playfair Display";
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: 37px; /* 123.333% */
+/* padding: 46px 46px 0 200px; */
+padding-top: 46px;
+}
+
+.name_input,
+.email_input,
+.password_input{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 8px;
+    width: 359px;
+    height: 50px;
+    flex-shrink: 0;
+flex-shrink: 0;
+border-radius: 4px;
+border: 1px solid #E8E8E8;
+background: var(--Fill-White, #FFF);
+box-shadow: 0px 9px 17px 0px rgba(0, 0, 0, 0.07);
+}
+.sign_up_inputs form{ 
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.sign_up_inputs form i{
+    color:  Gray;
+}
+.sign_up form input{
+    color: var(--Fill-Dark-Gray, #7F7F7F);
+font-feature-settings: 'liga' off, 'clig' off;
+
+/* 14PX/Regular */
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 23px; /* 164.286% */
+border: none;
+outline: none;
+}
+
+.sign_up_inputs button{
+    display: flex;
+padding: 13px 48px;
+align-items: center;
+gap: 10px;
+border-radius: 4px;
+background: var(--Fill-Primary, #FF642F);
+color: var(--Fill-White, #FFF);
+text-align: center;
+font-feature-settings: 'liga' off, 'clig' off;
+cursor: pointer;
+/* Button/Large */
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: -0.2px;
+border: none;
+}
+.sign_up_inputs form button:hover {
+    background-color: #ffffff;
+    color: #FF642F;
+    border: 1px solid #FF642F;
+    transition: 0.5s;
+}
+
+.sign_lover_texts p{
+    color: var(--Fill-Black, #000);
+font-feature-settings: 'liga' off, 'clig' off;
+
+/* 16PX/Regular */
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+
+}
+.sign_lover_texts span{
+    color: var(--Fill-Primary, #FF642F);
+font-feature-settings: 'liga' off, 'clig' off;
+
+/* 16PX/Medium */
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+}
+
+
+.sign_up_second_div_text{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+}
+
+.sign_up_second_div h2{
+    text-align: center;
+    color: white;
+    font-family: Inter;
+    font-size: 45px;
+    letter-spacing: 1.5px;
+   
+}
+.sign_up_second_div p{
+    color: white;
+    font-family: Inter;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 90px;
+}
+
+.sign_up_second_div{
+    flex: 1;
+    display: flex;
+    background-color: #FF642F;
+    align-items: center;
+    justify-content: center;
+  
+}
+form p{
+    font-family: Inter;
+}
+form p a{
+    color: #FF642F;
+}
