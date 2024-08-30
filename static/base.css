@@ -257,5 +257,30 @@ footer span {
   margin-top: 28px;
 }
 
+#results {
+  display: none;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  width: 300px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  z-index: 1000; 
+}
 
+#results div {
+  padding: 8px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
 
+#results div:last-child {
+  border-bottom: none;
+}
+
+#results div:hover {
+  background-color: #e6f7ff;
+}

@@ -201,7 +201,7 @@
       
     </div>
 
-    <div class="recipe_carts_div">
+    {% comment %} <div class="recipe_carts_div">
         <h2>You might also like</h2>
         <div class="carts_div">
             <div class="recipe_cart">
@@ -241,24 +241,25 @@
 
             <div class="recipe_cart">
                 <div class="recipe_foto_div"><img src="{% static './images/img8.png' %}" alt=""></div>
-                <p>Cranberry Macaroon Ice Cream Cake  </p>
-            </div>
+                <p>Cranberry Macaroon Ice Cream Cake </p>
+            </div> {% endcomment %}
 
 
             
             <div class="my_recipes">
                 <ul>
                     {% for recipe in recipes %}
+                    {% if recipe.image %}
                     <li>
-                        <h3>{{ recipe.recipe_owner.username }}</h3>
-                        <h3><a href="{% url 'recipe_detail' recipe.id %}">{{recipe.recipe_name}}</a></h3>
-                        <h3>{{ recipe.recipe }}</h3>
-                        <small>{{ recipe.time }}</small>
+                        <div class="recipe_foto_div">
+                            <img src="{{ recipe.image.url }}" alt="{{ recipe.recipe_name }}">
+                        </div>
+                        <p><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.recipe_name }}</a></p>
                     </li>
+                    {% endif %}
                     {% endfor %}
                 </ul>
-            </div>
-
+        </div>
 
 
 

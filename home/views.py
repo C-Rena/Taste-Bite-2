@@ -5,6 +5,7 @@ from .models import User_Recipe
 from .forms import RecipeForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 
 def home_page(request):
@@ -22,18 +23,17 @@ def profile_page(request):
 
 @login_required(login_url="account:login")
 def recipes_page(request):
-    keyword = request.GET.get("keyword")  # GET ile alınıyor
+    keyword = request.GET.get("keyword", "")
+    
     if keyword:
-        try:
-            # Recipe'yi ada göre bul ve detay sayfasına yönlendir
-            recipe = User_Recipe.objects.get(recipe_name__iexact=keyword)  # Tam eşleşme arama
-            return redirect('recipe_detail', id=recipe.id)
-        except User_Recipe.DoesNotExist:
-            # Recipe bulunamazsa tüm tarifleri listele
-            recipes = User_Recipe.objects.all()
-            return render(request, "recipes.html", {"recipes": recipes})
-
-    # Eğer arama yapılmadıysa tüm tarifleri listele
+        recipes = User_Recipe.objects.filter(recipe_name__icontains=keyword)
+    else:
+        recipes = User_Recipe.objects.none()
+    
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        recipe_list = list(recipes.values('id', 'recipe_name'))
+        return JsonResponse({'recipes': recipe_list})
+    
     recipes = User_Recipe.objects.all()
     return render(request, "recipes.html", {"recipes": recipes})
 

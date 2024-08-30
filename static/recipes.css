@@ -971,3 +971,40 @@ a {
   font-weight: 600;
   line-height: 28px;
 }
+
+
+
+
+.my_recipes ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+.my_recipes ul li {
+  width: calc((100% - (20px * (4 - 1))) / 4);
+}
+
+.my_recipes ul li img{
+  width: 100%;
+  border-radius: 6px;
+}
+.recipe_foto_div{
+  height: 191px;
+ 
+}
+
+.my_recipes ul li p{
+  color: var(--Fill-Black, #000);
+font-feature-settings: 'liga' off, 'clig' off;
+
+/* 18PX/Semibold */
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px; /* 155.556% */
+}
+.my_recipes ul li p a{
+  color: black;
+}
