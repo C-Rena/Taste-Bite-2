@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+
+
+}
+.container {
+  width: 1110px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+
+
+.container input[type="text"],
+.container input[type="email"],
+.container textarea {
+    width: 50%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+
+.container input[type="text"]:focus,
+.container input[type="email"]:focus,
+.container textarea:focus {
+    border-color: #ff642f;
+    outline: none;
+}
+
+
+.container .name_input i,
+.container .email_input i {
+    margin-left: 10px;
+    margin-top: 15px;
+    color: #777;
+}
+
+
+
+
+.container textarea {
+    height: 170px;
+    resize: none; 
+}
+
+.container button {
+    width: 170px;
+    padding: 12px;
+    background-color: #ff642f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Inter;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 30px;
+}
+
+/* Button hover effect */
+.container button:hover {
+    color: #ff642f;
+    background-color: white;
+    border: 1px solid #ff642f;
+    transition: 0.6s;
+}
+
+.alert_warning, .alert_success {
+    font-size: 20px;
+    width: 1110px;
+    margin: 0 auto;
+    text-align: center;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert_warning {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert_success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}

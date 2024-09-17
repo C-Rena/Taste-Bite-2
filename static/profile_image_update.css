@@ -1,0 +1,99 @@
+/* Form genel ayarları */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  /* border: 1px solid red; */
+}
+.container {
+  width: 1110px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+
+form input[type="file"],
+form textarea,
+form select {
+    width: calc(100% - 50px);
+    padding: 10px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+
+
+form button[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff642f;
+    color: #fff;
+    width: 180px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+form button[type="submit"]:hover {
+    background-color: white;
+    color: #ff642f;
+    border: 1px solid #ff642f;
+    transition: 0.8s;
+}
+
+
+form .errorlist {
+    color: #d9534f;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+form .errorlist li {
+    list-style: none;
+}
+.current-image {
+    width: 250px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%; 
+}
+
+.current-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 50%; 
+    display: block; 
+}
+.profile_update_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.current_img_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

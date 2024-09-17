@@ -114,11 +114,13 @@
 .foto_text{
   display: flex;
   gap: 5px;
+  transition: transform 0.3s ease-in-out;
   margin: 30px 0;
 
 }
 .foto_text_img{
   width: calc((100% - (5px * (2 - 1))) / 2);
+  transition: transform 0.3s ease-in-out;
 }
 .foto_text_text{
   background-color: #FF642F;
@@ -127,6 +129,7 @@
 }
 .foto_text_img img{
   width: 100%;
+  transition: transform 0.3s ease-in-out;
 }
 .foto_text_text p{
   color: var(--Fill-Black, #ffffff);
@@ -163,4 +166,29 @@ line-height: 37px; /* 123.333% */
   color: #721c24;
   font-family: Inter;
   font-size: 20px;
+}
+.my_recipes ul li i {
+  color: rgb(59, 58, 58); 
+  margin-right: 10px;
+}
+
+.my_recipes ul li .fa-solid {
+  font-size: 18px; 
+}
+
+.total_recipes_div {
+  padding: 20px;
+  background-color: #f8f9fa; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out; 
+}
+
+.total_recipes_div:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  transform: scale(1.01); 
+}
+
+.foto_text:hover {
+  transform: translateY(-5px); 
 }

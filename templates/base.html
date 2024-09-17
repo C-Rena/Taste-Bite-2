@@ -5,59 +5,79 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'base.css' %}">
     <link rel="stylesheet" href="{% static 'base_responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+<header class="container">
+    <div class="nav-bar">
+        <div class="nav-logo">
+            <img src="{% static 'images/logo.png' %}" alt="" id="desktop-logo">
 
-    <header class="container">
-        <div class="nav-bar">
-            <div class="nav-logo">
-                <img src="{% static 'images/logo.png' %}" alt="">
-
-            </div>
-            <div class="nav-menu">
-                <ul class="nav-link" id="nav-links">
-                    <li><a href="{%  url 'home' %}">Homepage</a></li>
-                    <li><a href="{%  url 'about' %}"">About</a></li>
-
-                    <div class="dropdown">
-                        <p>Recipe page <i class="fa-solid fa-chevron-down"></i></p>
-                        <div class="dropdown-content">
-                            <a href="{%  url 'recipes' %}">Recipes</a>
-                            <a href="{% url 'my_recipes' %}">My recipes</a>
-                       </div>
-                    </div>
-                       
-                    {% if request.user.is_authenticated %}
-                    <li><a href="{% url 'account:logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-                    
-                    {% else %}
-                    
-                    <li><a href="{%  url 'account:register' %}">Sign up</a></li>
-                    {% endif %}
-
-                </ul>
-
-                <div class="search_div_c" id="search_div">
-                    <form action="/recipes/" method="get">
-                    {% csrf_token %}
-                    <input type="text" id="s_input" name="keyword" placeholder="Search..." >
-                        <hr>
-                    </form>
-               
-                     <div id="results"></div>
+            
+        
+            <div class="nav_dropdown">
+                <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+                <div class="dropdown-contentt">
+                    <a href="{% url 'home' %}">Homepage</a>
+                    <a href="{% url 'about' %}">About</a>
+                    <a href="{% url 'catageory' %}">Categories</a>
+                    <a href="{% url 'recipes' %}">Recipes</a>
                 </div>
-                
-            </div>
-            <div class="nav-right-side">
-                <img src="{% static 'images/search.svg' %}" alt="" class="search_icon" id="search">
-                <a href="{%  url 'profile' %}"><img id="profile" src="{% static 'images/image.png' %}" alt=""></a>
-                
             </div>
         </div>
-    </header>
+
+
+         {% comment %} <div class="dark_light">
+                    <i class="fas fa-moon" id="moonIcon"></i>
+                    <i class="fas fa-sun" id="sunIcon"></i>
+            </div> {% endcomment %}
+        
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-link" id="nav-links">
+                <li><a href="{% url 'home' %}">Homepage</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'catageory' %}">Categories</a></li>
+                {% if request.user.is_authenticated %}
+                <div class="dropdown">
+                    <p>Recipe page <i class="fa-solid fa-chevron-down"></i></p>
+                    <div class="dropdown-content">
+                        <a href="{% url 'recipes' %}">Recipes</a>
+                        <a href="{% url 'my_recipes' %}">My recipes</a>
+                    </div>
+                </div>
+                {% else %}
+                <li><a href="{% url 'account:register' %}">Sign up</a></li>
+                {% endif %}
+            </ul>
+
+            <div class="search_div_c" id="search_div">
+                <form action="/recipes/" method="get">
+                {% csrf_token %}
+                <input type="text" id="s_input" name="keyword" placeholder="Search...">
+                    <hr>
+                </form>
+                <div id="results"></div>
+            </div>
+        </div>
+
+
+
+
+        <div class="nav-right-side">
+            <img src="{% static 'images/search.svg' %}" alt="" class="search_icon" id="search">
+            {% if user.is_authenticated and user.userprofile.profile_image %}
+                <a href="{% url 'profile' %}"><img id="user_profile_img" src="{{ user.userprofile.profile_image.url }}" alt=""></a>
+            {% else %}
+                <a href="{% url 'profile' %}"><img src="/media/default.png" alt=""></a>
+            {% endif %}
+        </div>
+    </div>
+</header>
+
 
 
     {% block body %}
@@ -109,6 +129,10 @@
 
 
             </div>
+        </div>
+
+        <div class="contact_div">
+            <a href="{% url 'contact' %}">Contact us</a>
         </div>
 
         <hr>

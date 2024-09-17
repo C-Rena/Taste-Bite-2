@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+    <link rel="stylesheet" href="{% static 'recipes_by_category.css' %}">
+
+
+<div class="header_img_div">
+    <img  src="{% static './images/Header Image.png' %}" alt="">
+
+</div>
+<div class="container">
+    <div class="category_title_div">
+        <h2 class="category_title">{{ category_name }}</h2>
+        <p>One thing I learned living in the Canarsie section of Brooklyn, NY was how to cook a good Italian meal. Here is a recipe I created after having this dish in a restaurant. Enjoy!</p>
+    </div>
+    
+
+    {% if recipes %}
+        <div class="recipes_list">
+            {% for recipe in recipes %}
+                <div class="recipe_card">
+                    <ul>
+                        <li>
+                            <div class="recipe_card_img">
+                                <img src="{{ recipe.image.url }}" alt="{{ recipe.recipe_name }}" class="recipe_image">
+                            </div>
+                            
+                             <p><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.recipe_name }}</a></p>
+                        </li>
+                    </ul>
+                    
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no_recipes">No recipes found in this category...</p>
+    {% endif %}
+    </div>
+
+
+{% endblock body %}

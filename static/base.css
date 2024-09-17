@@ -50,9 +50,9 @@ margin: 40px 0;
   line-height: 24px;
 }
 
-.nav-bar .nav-menu .nav-link li {
+/* .nav-bar .nav-menu .nav-link li {
   display: block;
-}
+} */
 
 .nav-bar .nav-menu .nav-link li a {
   color: black;
@@ -85,22 +85,34 @@ margin: 40px 0;
 
 .nav-bar .nav-right-side {
   display: flex;
-  gap: 32px;
+  gap: 20px;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
 
 }
 
-#profile {
+.nav-right-side a{
   border-radius: 50%;
   display: flex;
   width: 50px;
   height: 50px;
-  gap: 35px;
+  gap: 25px;
 
 }
+.nav-right-side a img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+#user_profile_img{
+  border-radius: 50%;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  gap: 25px;
 
+}
 #search {
   font-size: 32px;
   margin: 10px 20px 0 0;
@@ -213,8 +225,13 @@ footer span {
   font-family: "Inter", sans-serif;
 }
 
-
-
+.contact_div{
+  margin-bottom: 20px;
+}
+.contact_div a{
+  color: #7F7F7F;
+  font-family: Inter;
+}
 .footer .f-left-side {
   display: flex;
   flex-direction: column;
@@ -225,7 +242,7 @@ footer span {
 }
 
 .footer .f-right-side {
-  width: 40%;
+
   display: flex;
   justify-content: space-between;
 }
@@ -283,4 +300,162 @@ footer span {
 
 #results div:hover {
   background-color: #e6f7ff;
+}
+.recipe-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.recipe-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.recipe-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+/* #NAVBAR ANIMASIYALAR */
+.nav-bar .nav-menu .nav-link li a {
+  color: black;
+  display: block;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+.nav-bar .nav-menu .nav-link li a:hover {
+  border-bottom: 2px solid #090200;
+  background-color: #f3774d;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
+.nav-bar .nav-menu .nav-link .dropdown p {
+  color: black;
+  display: block;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+.nav-bar .nav-menu .nav-link .dropdown p:hover {
+  border-bottom: 2px solid #090200;
+  background-color: #f3774d;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
+
+.nav-right-side img, .search_icon {
+  transition: transform 0.3s ease;
+}
+
+.nav-right-side img:hover, .search_icon:hover {
+  transform: scale(1.1);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* #LOGO ANIMATION */
+.nav-logo img {
+  animation: pulse 7s ease-in-out infinite;
+  display: block;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1); 
+  }
+  50% {
+    transform: scale(1.1); 
+  }
+}
+
+
+
+
+
+
+
+
+
+.nav-logo #desktop-logo {
+  display: block; /* Logonun varsayılan olarak görünmesini sağla */
+}
+.nav_dropdown i{
+  font-size: 30px;
+  margin-left: 20px;
+}
+.nav_dropdown {
+  display: none; /* Dropdown başlangıçta gizli */
+}
+.dropbtn{
+  background-color: white;
+  border: none;
+}
+.dropdown-contentt {
+  display: none; /* Başlangıçta gizli */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  opacity: 0;
+  padding: 10px 0;
+  margin-left: 17px;
+  border-radius: 5px;
+  flex-direction: column; /* İçeriklerin alt alta sıralanmasını sağlar */
+}
+
+.dropdown-contentt a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block; /* Linkleri blok yaparak alt alta sıralanmasını sağlar */
+  text-align: left; /* Yazıyı sola hizalar */
+  width: 100%; /* Linklerin tam genişlikte olmasını sağlar */
+}
+
+.dropdown-contentt a:hover {
+  background-color: #f1f1f1; /* Hover durumunda arka plan rengi */
+}
+
+/* Tıklamayla açılan menünün stilleri */
+.dropdown-contentt.show {
+  display: flex; /* Flex ile blok elemanları alt alta sıralar */
+  flex-direction: column; /* Linkleri dikey hizalar */
+  transform: translateY(0);
+  opacity: 1;
 }

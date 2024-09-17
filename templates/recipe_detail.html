@@ -5,14 +5,42 @@
     <link rel="stylesheet" href="{% static 'recipe_detail.css' %}">
     
     <div class="container">
+
+     {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == "warning" %}
+                    <div class="alert_warning">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert_success">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
     
 
         <div class="my_recipes">
             <ul>
         
                 <li>
-                    {% comment %} <h3>{{ recipe.recipe_owner.username }}</h3> {% endcomment %}
-                    <h3>{{ recipe.recipe_name }}</h3>
+                   
+                    <h3>{{ recipe.recipe_name }}</h3>  
+
+                   <div class="user_recipe_owner">
+                        <img src="{{ user.userprofile.profile_image.url }}" alt="">
+                        <span class="username">{{ recipe.recipe_owner.username }}</span>
+                         <form action="{% url 'add_to_favorites' recipe.id %}" method="post" class="favorite_form">
+                            {% csrf_token %}
+                            <button type="submit" class="favorite_button">
+                                <i id="heart" class="fa-regular fa-heart"></i>
+                            
+                            </button>
+                        </form>
+                    </div>
+
+            
                     <p>{{ recipe.recipe }}</p>
                     <small>{{ recipe.time }}</small>
                     {% if recipe.image %}
@@ -24,9 +52,78 @@
             
             </ul>
         </div>
-       
-       
+         <div class="coments">
+        <h3>COMMENTS</h3>
 
+        {% if comments %}
+           {% for comment in comments  %}
+                <div class="comment">
+                <div class="comment_atribute">
+                  <h3>{{comment.comment_author}}</h3>
+                    <h4>{{comment.comment_content}}</h4>
+                    <p>{{comment.comment_date}}</p></div>
+                  
+                    
+                </div>
+           
+           {% endfor %}
+
+        
+        {% else %}
+            <div class="warning">No comments yet...</div>
+        {% endif %}
+
+
+    
+    </div> 
+    <div class="comment_form">
+        <form action="{% url 'comment' recipe.id %}" method="post">
+            {% csrf_token %}
+
+            <div class="form_group">
+                
+                <input type="text" name="comment_author" placeholder="Enter your name..." id="commentAuthor">
+            </div>
+
+            
+            <div class="form_group">
+                
+                <textarea type="text" name="comment_content" placeholder="Enter your comment..." id="commentContent"></textarea>
+            </div>
+
+            <button class="comment_btn" type="submit">Post Comment</button>
+        </form>
     </div>
+
+
+<div class="rating">
+    <h3>Rate this Recipe</h3>
+    <form action="{% url 'rate_recipe' recipe.id %}" method="post" id="ratingForm">
+        {% csrf_token %}
+        <div class="stars">
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+        </div>
+        <button type="submit" class="rate_btn">Submit Rating</button>
+    </form>
+
+  
+  
+
+</div>
+      
+<div class="download_button">
+        <a href="{% url 'download_recipe_pdf' recipe.id %}" class="btn download-btn">Download Recipe PDF</a>
+    </div>
+
+
+   
+    </div>
+    
+ 
+  
 {% endblock body %}
 

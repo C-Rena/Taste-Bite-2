@@ -4,6 +4,7 @@
 
 
     <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'home_responsive.css' %}">
     
 
 
@@ -141,32 +142,32 @@
         <div class="cards">
             <div class="card">
                 <div class="photo"><img src="static/images/card-image/c-image1.png" alt=""></div>
-                <span>Pasta</span>
+                <a href="{% url 'recipes_by_category' category_name='Pasta' %}">Pasta</a>
             </div>
 
             <div class="card">
                 <div class="photo"><img src="static/images/card-image/c-image2.png" alt=""></div>
-                <span>Pizza</span>
+                <a href="{% url 'recipes_by_category' category_name='Pizza' %}">Pizza</a>
             </div>
 
             <div class="card">
                 <div class="photo"><img src="static/images/card-image/c-image3.png" alt=""></div>
-                <span>Vegan</span>
+                <a href="{% url 'recipes_by_category' category_name='Vegan' %}">Vegan</a>
             </div>
 
             <div class="card">
                 <div class="photo"><img src="static/images/card-image/c-image4.png" alt=""></div>
-                <span>Desserts</span>
+                <a href="{% url 'recipes_by_category' category_name='Desserts' %}">Desserts</a>
             </div>
 
             <div class="card">
                 <div class="photo"><img src="static/images/card-image/c-image5.png" alt=""></div>
-                <span>Smoothies</span>
+                <a href="{% url 'recipes_by_category' category_name='Smooties' %}">Smooties</a>
             </div>
 
             <div class="card">
                 <div class="photo"><img src="static/images/card-image/c-image6.png" alt=""></div>
-                <span>Breakfast</span>
+                <a href="{% url 'recipes_by_category' category_name='Breakfast' %}">Breakfast</a>
             </div>
         </div>
     </section>
@@ -238,123 +239,30 @@
             </div>
         </div>
     </section>
+    
+<section class="home-page-section-5 container">
+    <h5>Latest Recipes</h5>
+    <div class="my_recipes">
+        <ul id="recipeList">
+            {% for recipe in recipes %}
+            {% if recipe.image %}
+            <li class="recipe-item" style="display: none;">
+                <div class="recipe_foto_div">
+                    <img src="{{ recipe.image.url }}" alt="{{ recipe.recipe_name }}">
+                </div>
+                <p><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.recipe_name }}</a></p>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
 
-    <section class="home-page-section-5 container">
-        <h5>Latest Recipes</h5>
-        <div class="cards">
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image.png" alt=""></div>
-                <div class="text">
-                    <span>Caramel Strawberry Milkshake</span>
-                </div>
-            </div>
+    <div class="section-5-btn">
+        <a href="#" id="loadMore" class="l-M-btn">Load More</a>
+    </div>
+</section>
 
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image1.png" alt=""></div>
-                <div class="text">
-                    <span>Cashew Vegan Rice</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image2.png" alt=""></div>
-                <div class="text">
-                    <span>Smoked Salmon Salad Sandwich</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image3.png" alt=""></div>
-                <div class="text">
-                    <span>Salmon in Creamy Sun Dried Tomato Sauce</span>
-                </div>
-
-            </div>
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image4.png" alt=""></div>
-                <div class="text">
-                    <span>Healthy Jam Waffle Breakfast</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image5.png" alt=""></div>
-                <div class="text">
-                    <span>Chocolate and Banana Jar Cake</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image6.png" alt=""></div>
-                <div class="text">
-                    <span>Caramel Blueberry Scones</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image7.png" alt=""></div>
-                <div class="text">
-                    <span>Blueberry Carrot Cake</span>
-                </div>
-            </div>
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image8.png" alt=""></div>
-                <div class="text">
-                    <span>Vegan Cauliflower Salad</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image9.png" alt=""></div>
-                <div class="text">
-                    <span>Roasted Red Pepper Soup</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image10.png" alt=""></div>
-                <div class="text">
-                    <span>Eggs and Avocado Toaste</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image11.png" alt=""></div>
-                <div class="text">
-                    <span>Pork Shoulder Cashew Noodles</span>
-                </div>
-            </div>
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image12.png" alt=""></div>
-                <div class="text">
-                    <span>Toasted Farfalle In Pesto Sauce</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image13.png" alt=""></div>
-                <div class="text">
-                    <span>Cheesy Bacon Burger Sliders</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image14.png" alt=""></div>
-                <div class="text">
-                    <span>Fig and Raisins Oatmeal</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="img"> <img src="static/images/Recipe/Image15.png" alt=""></div>
-                <div class="text">
-                    <span>Silky Smooth Panacotta</span>
-                </div>
-            </div>
-        </div>
-        <div class="section-5-btn"> <a href="" class="l-M-btn">Load More</a></div>
-
-    </section>
+ <script src="{% static 'home.js' %}"></script>
 
     
 {% endblock body %}

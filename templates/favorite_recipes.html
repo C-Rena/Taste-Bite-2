@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+    <link rel="stylesheet" href="{% static 'favorite_recipes.css' %}">
+    <link rel="stylesheet" href="{% static 'fav_res.css' %}">
+    
+            {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == "warning" %}
+                <div class="alert_warning">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="alert_success">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    
+            <div class="fav_title">
+            <div class="fav_c">
+                <div class="icon_div">
+                <div class="icon_img">
+                    <img src="{% static 'images/Background.svg' %}" alt="">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            
+                <h2>Favorites</h2>
+
+            
+            </div>
+              <form method="POST" action="{% url 'delete_selected_favorites' %}">
+    {% csrf_token %}
+    <div class="fav_menu">
+        <ul>
+            <li><p>{{ favorites.count }} (Recipes)</p></li>
+            <li>
+                <button type="submit" class="btn" name="select" value="select"><i class="fa-solid fa-square-check"></i> Select</button>
+            </li>
+            <li>
+                <button type="button" class="btn" onclick="selectAllCheckboxes()"><i class="fa-regular fa-circle"></i> All</button>
+            </li>
+            <li>
+                <button type="submit" class="btn" name="delete" value="delete"><i class="fa-solid fa-trash-can"></i> Delete</button>
+            </li>
+        </ul>
+    </div>
+
+    {% if favorites %}
+        <ul class="favorite_list">
+            {% for favorite in favorites %}
+            <li class="favorite_item">
+                <div class="ch_div">
+                      <input type="checkbox" name="selected_favorites" value="{{ favorite.id }}" class="select-checkbox">
+                </div>
+              
+                <div class="recipe_card_img">
+                    <img src="{{ favorite.recipe.image.url }}" alt="{{ favorite.recipe.recipe_name }}" class="recipe_image">
+                </div>
+                <a href="{% url 'recipe_detail' favorite.recipe.id %}" class="view_recipe">{{ favorite.recipe.recipe_name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You haven't added a favorite recipe yet...</p>
+    {% endif %}
+    </form>
+
+            
+            </div>
+            
+        
+
+    
+
+
+    <script>
+        function selectAllCheckboxes() {
+        const checkboxes = document.querySelectorAll('.select-checkbox');
+        checkboxes.forEach((checkbox) => {
+        checkbox.checked = true;
+    });
+}
+
+    document.querySelector('.fav_menu .btn[name="select"]').addEventListener('click', function (e) {
+        e.preventDefault(); 
+        const checkboxes = document.querySelectorAll('.favorite_item .select-checkbox');
+        checkboxes.forEach(checkbox => {
+            checkbox.closest('.favorite_item').classList.toggle('show-checkbox'); 
+        });
+    });
+
+
+    </script>
+{% endblock body %}

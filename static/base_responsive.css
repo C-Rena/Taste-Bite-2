@@ -1,5 +1,38 @@
-@media (max-width: 757px) {
-    .nav-menu ul li{
-        display: none;
+
+@media (max-width: 850px) {
+    .nav-link{
+        display: none !important;
     }
+
+    .nav-logo img{
+      display: none;
+    }
+    
+  
+}
+
+@media (max-width: 650px) {
+    .f-right-side {
+        flex-direction: column;
+      }
+      .f-col-1 ul,
+      .f-col-2 ul,
+      .f-col-3 ul {
+        display: none;
+      }
+    }
+
+
+
+
+
+/* 850px ve altı için medya sorgusu */
+@media (max-width: 850px) {
+  .nav-logo #desktop-logo {
+    display: none; /* Logo 850px altında gizlenecek */
+  }
+  
+  .nav_dropdown {
+    display: inline-block; /* Bars simgesi 850px altında görünecek */
+  }
 }

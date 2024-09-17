@@ -9,9 +9,9 @@
             <h2 id="add_text">Add your recipe</h2>
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <!-- {{form.media}} -->
+                {% comment %} {{form.media}} {% endcomment %}
                 <div class="recipe_name">
-                    <input type="text" name="recipe_name" placeholder="Tarif adı...">
+                    <input type="text" name="recipe_name" placeholder="Recipe name...">
                 </div>
 
                 <div class="recipe_area">
@@ -19,7 +19,35 @@
                 </div>
 
                 <div class="image_upload">
-                    <input type="file" name="image" accept="image/*">
+                    <input type="file" name="image" accept="image/*" required>
+                </div>
+
+
+
+                <div class="category">
+                    <select name="category" id="">
+                        <option value="Seefood">Seefood</option>
+                        <option value="Soup">Soup</option>
+                        <option value="Pancakes">Pancakes</option>
+                        <option value="Meat">Meat</option>
+                        <option value="Chicken">Chicken</option>
+                        <option value="Less than 30 min">Less than 30 min</option>
+                        <option value="Pasta">Pasta</option>
+                        <option value="Pizza">Pizza</option>
+                        <option value="Cake">Cake</option>
+                        <option value="Pastries">Pastries</option>
+                        <option value="Burger">Burger</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Desserts">Desserts</option>
+                        <option value="Smoothies">Smoothies</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Salad">Salad</option>
+                        <option value="Sandwitches">Sandwitches</option>
+                        <option value="Waffles">Waffles</option>
+                        <option value="Ramen">Ramen</option>
+                        <option value="Dips">Dips</option>
+
+                    </select>
                 </div>
 
                 <button class="add_recipe_buton">Add</button>

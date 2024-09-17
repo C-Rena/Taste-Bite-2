@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+    <link rel="stylesheet" href="{% static 'profile_image_update.css' %}">
+    <div class="container">
+
+      <form action="" method="POST" enctype="multipart/form-data" class="profile-update-form">
+        {% csrf_token %}
+        <input type="hidden" name="" value="">
+        
+        <div class="form-group">
+            <div class="current_img_div">
+                <div class="current-image">
+                        <img src="{{ profile.profile_image.url }}" alt=""/>
+                    </div>
+            </div>
+            
+          
+            <input type="file" name="profile_image" id="id_profile_image">
+    </div>
+    <div class="profile_update_div">
+    
+        <button type="submit" class="update-button">Update</button>
+    </div>
+    
+</form>
+
+    </div>
+
+   
+{% endblock body %}
+

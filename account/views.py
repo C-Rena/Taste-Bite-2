@@ -3,6 +3,8 @@ from .forms import RegisterForm, LoginForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
+# from django.contrib.auth import update_session_auth_hash
+
 
 def register_page(request):
     form = RegisterForm(request.POST or None)
@@ -62,3 +64,20 @@ def login_page(request):
 def logout_page(request):
     logout(request)
     return redirect("home")
+
+
+
+def delete_account(request):
+    if request.method=="POST":
+        user=request.user
+        user.delete()
+        messages.success(request,"Your account has been successfully deleted...")
+        return redirect("home")
+    
+    else:
+        messages.error(request,"You have made an invalid request...")
+        return redirect('profile')
+    
+
+#########################################################
+

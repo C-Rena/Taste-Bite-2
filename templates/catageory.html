@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+
+
+    <link rel="stylesheet" href="{% static 'catageory.css' %}">
+
+    <section class="main_section">
+
+        <div class="category_main">
+            <div class="basliq">
+                <p>Categories</p>
+            </div>
+            <hr style="color:#E8E8E8">
+           
+            <div class="all_categories">
+                <div class="category_select">
+                    <div class="img_div"><img src="{% static './images/seefood.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Seefood' %}">Seefood</a>
+
+
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/soup.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Soup' %}">Soup</a>
+
+
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/pancakes.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Pancakes' %}">Pancakes</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/meat.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Meat' %}">Meat</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/chicken.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Chicken' %}">Chicken</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/less than 30 minute.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Less than 30 min' %}">Less than 30 min</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/pasta.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Pasta' %}">Pasta</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/pizza.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Pizza' %}">Pizza</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/cake.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Cake' %}">Cake</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/patries.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Pastries' %}">Pastries</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/burger.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Burger' %}">Burger</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/vegan.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Vegan' %}">Vegan</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/deserts.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Desserts' %}">Desserts</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/smooties.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Smooties' %}">Smooties</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/breakfast.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Breakfast' %}">Breakfast</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/salad.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Salad' %}">Salad</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/sandwiches.png' %}"></div>
+                    <a href="{% url 'recipes_by_category' category_name='Sandwiches' %}">Sandwiches</a>
+                    
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/waffle.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Waffles' %}">Waffles</a>
+                    
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/ramen.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Ramen' %}">Ramen</a>
+                </div>
+                <div class="category_select">
+                    <div><img src="{% static './images/dips.png' %}" alt=""></div>
+                    <a href="{% url 'recipes_by_category' category_name='Dips' %}">Dips</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+
+   
+   {% endblock body %}

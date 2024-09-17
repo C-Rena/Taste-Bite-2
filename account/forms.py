@@ -1,5 +1,5 @@
 from django import forms
-
+# from django.contrib.auth.models import User
 class RegisterForm(forms.Form):
     username = forms.CharField(max_length=30, label="Username")
     email = forms.EmailField(max_length=254, label="Email")
@@ -32,3 +32,7 @@ class RegisterForm(forms.Form):
 class LoginForm(forms.Form):
     email = forms.EmailField(max_length=254, label="Email")
     password = forms.CharField(max_length=128, label="Password", widget=forms.PasswordInput)
+
+
+####################################################
+

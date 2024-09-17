@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+
+    <link rel="stylesheet" href="{% static 'contact.css' %}">
+    
+
+
+
+    <div class="container">
+    
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == "warning" %}
+                <div class="alert_warning">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="alert_success">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <div class="name_input">
+           
+                <input type="text" name="name" placeholder="Full Name">
+
+            </div>
+
+            <div class="email_input">
+           
+                <input type="email" name="email" placeholder="Email">
+            </div>
+
+            <textarea name="message" id="">
+            
+            </textarea>
+            
+            <button>Contanct</button> 
+          
+        </form>
+    
+    </div>
+
+{% endblock body %}
